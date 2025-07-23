@@ -1,0 +1,31 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://baltenn.com/sitemap.xml
+
+# Specific rules for important pages
+Allow: /programs
+Allow: /shop  
+Allow: /membership
+Allow: /about
+Allow: /blog
+Allow: /contact
+
+# Block any admin or private areas (if they exist)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Allow crawling of assets
+Allow: /assets/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.svg
+Allow: /*.webp
+
+# Crawl delay (be respectful)
+Crawl-delay: 1 
