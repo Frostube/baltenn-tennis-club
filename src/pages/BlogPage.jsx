@@ -45,12 +45,12 @@ const BlogPage = () => {
       />
       {/* Hero Section */}
       <section className="section-padding py-16">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4">
-            News & <span className="text-neon-green">Blog</span>
+        <div className="text-center mb-8">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-3">
+            News & <span className="text-neon-green-readable">Blog</span>
           </h1>
-          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
-            Stay updated with the latest tennis news, tips, and club updates from our community of experts and enthusiasts.
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Stay updated with the latest tennis news, coaching tips, and club updates from Baltenn Tennis Club.
           </p>
         </div>
 

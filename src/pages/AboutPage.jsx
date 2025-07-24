@@ -215,11 +215,11 @@ const AboutPage = () => {
         <div className="bg-white rounded-3xl shadow-xl p-1 md:p-2">
           <div className="bg-white rounded-2xl p-6 md:p-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-                Our <span className="text-neon-green">Values</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4">
+                Our <span className="text-neon-green-readable">Values</span>
               </h2>
-              <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-                The principles that guide everything we do at Baltenn Tennis Club
+              <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                These core values guide everything we do at Baltenn Tennis Club.
               </p>
             </div>
 
@@ -252,11 +252,11 @@ const AboutPage = () => {
         <div className="bg-white rounded-3xl shadow-xl p-1 md:p-2">
           <div className="bg-white rounded-2xl p-6 md:p-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-                Meet Our <span className="text-neon-green">Expert Team</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4">
+                Meet Our <span className="text-neon-green-readable">Expert Team</span>
               </h2>
-              <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-                Our world-class coaching staff brings decades of combined experience from professional competition to elite training programs
+              <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Our certified coaches bring years of experience and passion to help you achieve your tennis goals.
               </p>
             </div>
 

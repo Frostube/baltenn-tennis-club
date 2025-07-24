@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         'neon-green': '#D7FF32',
+        'neon-green-readable': '#32CD32', // LimeGreen - for text on white backgrounds
         'tennis-green': '#9ACD32',
         'court-clay': '#CC7722'
       },
