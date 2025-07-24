@@ -2,37 +2,7 @@ import { useState } from 'react'
 import { ShoppingCart } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SEOHead from '../components/SEOHead'
-
-const products = [
-  {
-    id: 1,
-    name: 'Wilson Pro Staff Racket',
-    category: 'Gear',
-    price: '€229.00',
-    image: '/Wilson Pro Staff Racket.webp'
-  },
-  {
-    id: 2,
-    name: 'Nike Court Shoes',
-    category: 'Footwear',
-    price: '€109.00',
-    image: '/Nike Court Shoes.webp'
-  },
-  {
-    id: 3,
-    name: 'Head Tennis Bag',
-    category: 'Gear',
-    price: '€89.00',
-    image: '/Head Tennis Bag.webp'
-  },
-  {
-    id: 4,
-    name: 'Training Jersey',
-    category: 'Jersey',
-    price: '€45.00',
-    image: '/Training Jersey.avif'
-  }
-]
+import { products } from '../data/products'
 
 const categories = ['All', 'Jersey', 'Footwear', 'Gear']
 
@@ -53,13 +23,12 @@ const ShopPage = () => {
       />
       <div className="section-padding py-16">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-3">
-            Tennis <span className="text-neon-green-readable">Shop</span>
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
+            Tennis <span className="text-neon-green">Shop</span>
           </h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Discover premium tennis equipment, apparel, and accessories from top brands. 
-            Everything you need to elevate your game.
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            Premium tennis equipment and apparel for every player.
           </p>
         </div>
 

@@ -3,61 +3,11 @@ import { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { ArrowLeft, Heart, ShoppingBag } from 'lucide-react'
 import { useCart } from '../contexts/CartContext'
-
-const products = [
-  {
-    id: 1,
-    name: 'Wilson Pro Staff Racket',
-    category: 'Tennis Racket',
-    price: '€229.00',
-    image: '/Wilson Pro Staff Racket.webp',
-    images: ['/Wilson Pro Staff Racket.webp', '/Wilson Pro Staff Racket.webp', '/Wilson Pro Staff Racket.webp'],
-    description: 'Elite-level racket built for power and control. Professional grade equipment used by top players worldwide.',
-    features: ['Professional grade carbon fiber construction', 'Enhanced sweet spot for power', 'Superior control and precision', 'Comfortable grip design'],
-    colors: ['Black/Red', 'White/Blue', 'All Black'],
-    sizes: ['Grip 1', 'Grip 2', 'Grip 3', 'Grip 4']
-  },
-  {
-    id: 2,
-    name: 'Nike Court Advantage Tennis Top',
-    category: 'Tennis Apparel',
-    price: '€109.00',
-    image: '/Nike Court Shoes.webp',
-    images: ['/Nike Court Shoes.webp', '/Nike Court Shoes.webp', '/Nike Court Shoes.webp'],
-    description: 'The slim-fit Advantage top is built to minimise distractions so you can stay focused while you play. It\'s made from sweat-wicking Dri-FIT material that has four-way stretch that moves with you.',
-    features: ['Dri-FIT technology wicks sweat', 'Four-way stretch fabric', 'Slim athletic fit', 'Lightweight and breathable'],
-    colors: ['Cannon/Black', 'White/Navy', 'Black/White', 'Blue/Grey', 'Green/Black'],
-    sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL']
-  },
-  {
-    id: 3,
-    name: 'Head Tennis Bag',
-    category: 'Tennis Gear',
-    price: '€89.00',
-    image: '/Head Tennis Bag.webp',
-    images: ['/Head Tennis Bag.webp', '/Head Tennis Bag.webp', '/Head Tennis Bag.webp'],
-    description: 'Spacious and stylish gear bag for serious players. Multiple compartments for rackets, shoes, and accessories.',
-    features: ['Multiple racket compartments', 'Ventilated shoe compartment', 'Durable construction', 'Comfortable carry straps'],
-    colors: ['Black/Blue', 'Navy/White', 'Black/Red'],
-    sizes: ['6 Rackets', '9 Rackets', '12 Rackets']
-  },
-  {
-    id: 4,
-    name: 'Training Jersey',
-    category: 'Tennis Apparel',
-    price: '€45.00',
-    image: '/Training Jersey.avif',
-    images: ['/Training Jersey.avif', '/Training Jersey.avif', '/Training Jersey.avif'],
-    description: 'Lightweight and breathable training top perfect for practice sessions and casual play.',
-    features: ['Moisture-wicking fabric', 'Comfortable fit', 'Durable construction', 'Easy care'],
-    colors: ['White', 'Black', 'Navy', 'Red'],
-    sizes: ['XS', 'S', 'M', 'L', 'XL']
-  }
-]
+import { getProductById } from '../data/products'
 
 const ProductDetailPage = () => {
-  const { id } = useParams()
-  const product = products.find((p) => p.id === parseInt(id))
+  const { productId } = useParams()
+  const product = getProductById(productId)
   const [selectedImage, setSelectedImage] = useState(0)
   const [selectedSize, setSelectedSize] = useState('')
   const [selectedColor, setSelectedColor] = useState(0)

@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        'neon-green': '#D7FF32',
-        'neon-green-readable': '#32CD32', // LimeGreen - for text on white backgrounds
-        'tennis-green': '#9ACD32',
+        'neon-green': '#B8E632', // More iPhone-friendly, less harsh
+        'neon-green-bright': '#D7FF32', // Original for specific use cases
+        'tennis-green': '#8FBC8F', // Softer tennis green
         'court-clay': '#CC7722'
       },
       fontFamily: {

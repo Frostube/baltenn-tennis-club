@@ -16,6 +16,50 @@
   * {
     box-sizing: border-box;
   }
+  
+  /* iOS-specific color fixes */
+  @supports (-webkit-touch-callout: none) {
+    /* iOS Safari specific styles */
+    .text-neon-green {
+      color: #A0C934 !important; /* Darker, more readable on iOS */
+    }
+    
+    .bg-neon-green {
+      background-color: #A0C934 !important; /* Less harsh on iOS */
+    }
+    
+    .border-neon-green {
+      border-color: #A0C934 !important;
+    }
+    
+    .hover\:bg-neon-green:hover {
+      background-color: #8FBC32 !important;
+    }
+    
+    .hover\:text-neon-green:hover {
+      color: #8FBC32 !important;
+    }
+  }
+  
+  /* Additional iPhone-specific fixes */
+  @media screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 480px) {
+    /* iPhone specific color adjustments */
+    .text-neon-green {
+      color: #7A9F28 !important; /* Even darker for iPhone readability */
+      text-shadow: none !important;
+    }
+    
+    .bg-neon-green {
+      background-color: #8FBC32 !important; /* Muted for iPhone */
+    }
+    
+    /* Make sure the logo/brand text is readable */
+    .text-neon-green.text-3xl,
+    .text-neon-green.text-4xl {
+      color: #6B8E23 !important; /* Olive green - much easier on iPhone */
+      font-weight: 700 !important;
+    }
+  }
 }
 
 @layer components {
@@ -25,11 +69,6 @@
   
   .btn-secondary {
     @apply border-2 border-neon-green text-neon-green font-semibold px-6 py-3 rounded-lg hover:bg-neon-green hover:text-black transition-all duration-300;
-  }
-
-  /* Readable version for text on white backgrounds */
-  .btn-secondary-readable {
-    @apply border-2 border-neon-green-readable text-neon-green-readable font-semibold px-6 py-3 rounded-lg hover:bg-neon-green-readable hover:text-black transition-all duration-300;
   }
   
   .section-padding {
@@ -41,6 +80,28 @@
     @apply shadow-lg hover:shadow-xl transition-shadow duration-300;
   }
 
+  /* iOS-friendly button styles */
+  @supports (-webkit-touch-callout: none) {
+    .btn-primary {
+      background-color: #A0C934 !important;
+      color: #000000 !important;
+    }
+    
+    .btn-primary:hover {
+      background-color: #8FBC32 !important;
+    }
+    
+    .btn-secondary {
+      border-color: #A0C934 !important;
+      color: #A0C934 !important;
+    }
+    
+    .btn-secondary:hover {
+      background-color: #A0C934 !important;
+      color: #000000 !important;
+    }
+  }
+
   /* Line clamp utilities for text truncation */
   .line-clamp-2 {
     display: -webkit-box;
@@ -48,7 +109,7 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -141,11 +202,11 @@
 
 @layer utilities {
   .text-neon-green {
-    color: #ccff00;
+    color: #D7FF32;
   }
   
   .bg-neon-green {
-    background-color: #ccff00;
+    background-color: #D7FF32;
   }
   
   .border-neon-green {
@@ -167,117 +228,4 @@
   .bg-court-clay {
     background-color: #CC7722;
   }
-
-  .text-balance {
-    text-wrap: balance;
-  }
-  
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .hide-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
-
-  /* Gradient text effect */
-  .gradient-text {
-    background: linear-gradient(135deg, #D7FF32, #9ACD32);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* Custom focus states */
-  .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-neon-green focus:ring-offset-2;
-  }
-
-  /* Smooth hover transitions */
-  .hover-lift {
-    @apply transform transition-all duration-300 hover:scale-105 hover:shadow-lg;
-  }
-
-  /* Custom link styling */
-  .link-accent {
-    @apply text-neon-green hover:underline;
-  }
-
-  /* New readable link styling for white backgrounds */
-  .link-accent-readable {
-    @apply text-neon-green-readable hover:underline;
-  }
-
-  /* Animation utilities */
-  .animate-fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-  }
-
-  .animate-slide-up {
-    animation: slideUp 0.6s ease-out;
-  }
-
-  .animate-bounce-gentle {
-    animation: bounceGentle 2s infinite;
-  }
-}
-
-/* Animation keyframes */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes bounceGentle {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
-/* Responsive text utilities */
-@media (max-width: 640px) {
-  .text-responsive-sm {
-    font-size: 0.875rem;
-  }
-}
-
-/* Additional color utilities for the readable variant */
-.text-neon-green-readable {
-  color: #ccff00;
-}
-
-.bg-neon-green-readable {
-  background-color: #ccff00;
-}
-
-.border-neon-green-readable {
-  border-color: #ccff00;
-}
-
-.ring-neon-green-readable {
-  --tw-ring-color: #ccff00;
 } 
